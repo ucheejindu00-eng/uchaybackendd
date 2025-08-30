@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "./config/db";
-import authRoutes from "./routes/authRoutes";
-import videoRoutes from "./routes/videoRoutes";
+import connectDB from "./src/config/db";
+import authRoutes from "./src/routes/authRoutes";
+import videoRoutes from "./src/routes/videoRoutes";
 
 dotenv.config();
 connectDB();
