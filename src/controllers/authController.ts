@@ -7,12 +7,12 @@ export const registerAdmin = async (req: Request, res: Response) => {
   try {
     const { name, email, password } = req.body;
 
-    const totalAdmins = await Admin.countDocuments();
-    if (totalAdmins > 0) {
-      return res
-        .status(400)
-        .json({ msg: "An admin already exists. Only one admin is allowed." });
-    }
+    // const totalAdmins = await Admin.countDocuments();
+    // if (totalAdmins > 0) {
+    //   return res
+    //     .status(400)
+    //     .json({ msg: "An admin already exists. Only one admin is allowed." });
+    // }
 
     const existing = await Admin.findOne({ email });
     if (existing) {
@@ -21,7 +21,6 @@ export const registerAdmin = async (req: Request, res: Response) => {
         .json({ msg: "Admin with this email already exists." });
     }
 
-    
     const hashedPassword = await bcrypt.hash(password, 10);
     const newAdmin = new Admin({ name, email, password: hashedPassword });
     await newAdmin.save();
@@ -32,7 +31,6 @@ export const registerAdmin = async (req: Request, res: Response) => {
     res.status(500).json({ msg: "Server error" });
   }
 };
-
 
 export const loginAdmin = async (req: Request, res: Response) => {
   try {
