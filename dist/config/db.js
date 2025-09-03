@@ -7,7 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const connectDB = async () => {
     try {
         // const conn = await mongoose.connect(process.env.MONGO_URI as string);
-        const conn = await mongoose_1.default.connect("mongodb://127.0.0.1:27017/MovieAssignmentDB");
+        const conn = await mongoose_1.default.connect("mongodb+srv://sylviaDB:womenintech@cluster0.fhx2vt1.mongodb.net/movieDB?retryWrites=true&w=majority&appName=Cluster0");
         // console.log(`MongoDB Connected: ${conn.connection.host}`);
         console.log(`MongoDB Connected: ${conn.connection.name}`);
     }

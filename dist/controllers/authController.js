@@ -10,12 +10,12 @@ const Admin_1 = __importDefault(require("../models/Admin"));
 const registerAdmin = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        const totalAdmins = await Admin_1.default.countDocuments();
-        if (totalAdmins > 0) {
-            return res
-                .status(400)
-                .json({ msg: "An admin already exists. Only one admin is allowed." });
-        }
+        // const totalAdmins = await Admin.countDocuments();
+        // if (totalAdmins > 0) {
+        //   return res
+        //     .status(400)
+        //     .json({ msg: "An admin already exists. Only one admin is allowed." });
+        // }
         const existing = await Admin_1.default.findOne({ email });
         if (existing) {
             return res
