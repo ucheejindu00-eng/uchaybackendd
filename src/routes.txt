@@ -1,0 +1,19 @@
+// Auth Routes
+POST /api/auth/register - Register a new user
+POST /api/auth/login - Login and receive a JWT token
+GET /api/auth/profile - Get authenticated user's profile
+
+// Video Routes
+POST /api/videos/upload - Upload a new video
+GET /api/videos - Get a list of all videos
+GET /api/videos/:id - Get details of a specific video
+DELETE /api/videos/:id - Delete a video by ID
+
+// Admin Routes (if implemented)
+GET /api/admin/users - List all users (admin only)
+DELETE /api/admin/users/:id - Delete a user (admin only)
+
+// Brief Explanation:
+// Auth routes handle user registration, login, and profile retrieval.
+// Video routes allow uploading, listing, viewing, and deleting videos.
+// Admin routes (if present) provide user management for administrators.
