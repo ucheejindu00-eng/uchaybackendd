@@ -5,7 +5,7 @@ import Admin from "../models/Admin";
 
 export const registerAdmin = async (req: Request, res: Response) => {
   try {
-    const { /* name, */ email, password } = req.body;
+    const { name, email, password } = req.body;
 
     // const totalAdmins = await Admin.countDocuments();
     // if (totalAdmins > 0) {
@@ -48,8 +48,8 @@ export const loginAdmin = async (req: Request, res: Response) => {
     );
 
     res.json({ token });
-  } catch (err) {
-    res.status(500).json({ msg: "Server error" });
+  } catch (err: any) {
+    res.status(500).json({ msg: `Server error: ${err.message}` });
   }
 };
 
